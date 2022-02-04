@@ -1,4 +1,4 @@
-#==== How to install System ====
+#How to install System
 1. should install python version 7.6 Up
 2. should install All libaries run this command in wind CMD 
     pip install -r requirements.txt
