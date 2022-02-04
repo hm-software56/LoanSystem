@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <script>
+        function myFunction() {
+            var x = document.getElementById("multiFiles").value;
+            document.getElementById("show_name").innerHTML = x;
+        }
+    </script>
+    <div class="container-fluid pl-0 pr-0 ">
+        <div class="col-12 border" id="bg">
+            <div class="row">
+                <div class="col-md-12 pt-2">
+                    <div class="bg-info text-white text-center rounded-top">
+                        <div class="col-md-12 p-2">
+                            ອັບໂຫລດໄຟຣຝຶກສອນແມ່ແບບ
+                        </div>
+                    </div>
+                    <div class="card border" id="htrain">
+                        <div class="modal-body" id="result">
+                            <div id="done">
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="multiFiles"
+                                               multiple="multiple" onchange="myFunction()">
+                                        <label class="custom-file-label" for="customFile"
+                                               id="show_name">ເລືອກໄຟຣ</label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" id="upload_train">
+                                        <il class="fa fa-hourglass-end"></il>
+                                        ຝຶກສອນແມ່ແບບ
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="gallery" id="remove"><span id="msg"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var htrain = window.screen.height - 228;
+        document.getElementById("htrain").style.height = htrain + 'px'
+    </script>
+{% endblock %}

@@ -1,0 +1,27 @@
+<table class="table table-bordered ">
+    <tr>
+        {% for title in data %}
+            <th>
+                {{ title }}
+            </th>
+        {% endfor %}
+    </tr>
+    {% for id in data['id'] %}
+        {% if result.status_id[loop.index0]==2 %}
+            <tr class="bg-success">
+                {% else %}
+            <tr>
+        {% endif %}
+    <td> {{ id }}</td>
+    <td>{{ data['acc_number'][loop.index0] }}</td>
+    <td>{{ data['vbcode'][loop.index0] }}</td>
+    <td>{{ data['client_loan_repayment_type_id'][loop.index0] }}</td>
+    <td>{{ data['max_interest_m'][loop.index0] }}</td>
+    <td>{{ data['start_date'][loop.index0] }}</td>
+    <td>{{ data['loan_period_months'][loop.index0] }}</td>
+    <td>{{ data['total_loan_amount'][loop.index0] }}</td>
+    <td>{{ data['collateral_required'][loop.index0] }}</td>
+    <td>{{ result.status_id[loop.index0] }}</td>
+    </tr>
+    {% endfor %}
+</table>

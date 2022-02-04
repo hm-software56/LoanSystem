@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <script>
+        function myFunction() {
+            var x = document.getElementById("multiFiles").value;
+            document.getElementById("show_name").innerHTML = x;
+        }
+    </script>
+    <div class="container-fluid pl-0 pr-0 ">
+        <div class="col-12 border" id="bg">
+            <div class="row">
+                <div class="col-md-6 pt-2">
+                    <div class="bg-info text-white text-center rounded-top">
+                        <div class="col-md-12 p-2">
+                            ອັບໂຫລດໄຟຣກວດສອບ
+                        </div>
+                    </div>
+                    <div class="card border table-responsive" id="hb">
+                        <div class="modal-body" id="result">
+                            <div id="done">
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="multiFiles"
+                                               multiple="multiple" onchange="myFunction()" accept=".csv">
+                                        <label class="custom-file-label" for="customFile"
+                                               id="show_name">ເລືອກໄຟຣ</label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" id="upload">
+                                        <il class="fa fa-hourglass-end"></il>
+                                        ປະມວນຜົນ
+                                    </button>
+                                </div>
+                            </div>
+                            <p id="msg"></p>
+                            <div class="gallery" id="remove">
+                                <img id="blah" src="/static/default/no-image.jpg" alt="your image"
+                                     class="img-fluid img-thumbnail"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pt-2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="bg-info text-white text-center rounded-top">
+                                <div class="col-md-12 p-2">
+                                    ສະແດງຜົນການກວດສອບ
+                                    <span class="text-right pt-3" id="download_csv" style="display:none">
+                                         |
+                                        <a href="/downloadresult" class="text-right text-danger">
+                                            <span class="fa fa-file-excel"></span>
+                                            ດາວໂຫຼດຜົນເປັນໄຟຣ csv</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card border table-responsive" id="hr">
+                                <div id="presult">
+                                    <img id="blah" src="/static/default/no-image.jpg" alt="your image"
+                                         class="img-fluid img-thumbnail"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var hb = window.screen.height - 228;
+        document.getElementById("hb").style.height = hb + 'px'
+        var hr = window.screen.height - 238;
+        document.getElementById("hr").style.height = hr + 'px'
+    </script>
+{% endblock %}

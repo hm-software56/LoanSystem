@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container-fluid pl-0 pr-0 ">
+        <div class="col-12 border" id="bg">
+            <div class="row">
+                <div class="col-md-12 pt-2">
+                    <div class="bg-info text-white text-center rounded-top">
+                        <div class="col-md-12 p-2">
+                            ເລຶອກແມ່ແບບທີ່ຕ້ອງການນໍາໃຊ້
+                        </div>
+                    </div>
+                    <div class="card border" id="st">
+                        <div class="modal-body">
+                            <form method="post">
+                                <div class="form-group">
+                                    <div class="form-check p-3">
+                                        <input class="form-check-input" type="radio" name="model" id="model1"
+                                               value="dtree"
+                                                {% if model=='dtree' %}
+                                               checked
+                                                {% endif %}
+                                        >
+                                        <label class="form-check-label" for="model1">
+                                            ໃຊ້ແມ່ແບບ Decision tree
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="model" id="model2"
+                                               value="knn"
+                                                {% if model=='knn' %}
+                                               checked
+                                                {% endif %}
+                                        >
+                                        <label class="form-check-label" for="model2">
+                                            ໃຊ້ແມ່ແບບ K-NN
+                                        </label>
+                                    </div>
+                                </div>
+                                <span class="pt-3">
+                                    <button type="submit" class="btn btn-outline-primary"><span
+                                            class="fa fa-save"></span> ບັນທຶກ</button>
+                                </span>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var st = window.screen.height - 228;
+            document.getElementById("st").style.height = st + 'px'
+        </script>
+{% endblock %}
