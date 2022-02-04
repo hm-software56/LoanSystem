@@ -5,5 +5,5 @@
 3. Run system double click: load.exe
 4. Copy url: http://127.0.0.1:5000/ from screen cmd then run on web browser
 
-<img src="https://github.com/ntajxyooj/LoanSystem/tree/main/static/result/1.jpg" width="100%"> 
+<img src="https://github.com/ntajxyooj/LoanSystem/blob/main/static/result/1.jpg" width="100%"> 
 <img src="https://github.com/ntajxyooj/LoanSystem/tree/main/static/result/2.jpg" width="100%"> 
